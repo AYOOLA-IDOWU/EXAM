@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idowu</title>
+</head>
+<body>
+    <h3>STUDENT GRADING SYSTEM</h3>
+
+        <input type="number" id="score" name="score" min="1" max="100"  placeholder="Enter your score" required> <br> <br>
+        <button onclick="calculateGrade()">CALCULATE GRADE</button>
+
+    <br> <br> 
+       <div id="grade"></div>
+
+    <script>
+        function calculateGrade(){
+             score = (document.getElementById('score').value);
+
+            let grade;
+            if (score < 0 || score > 100){
+                grade = "Enter number between 0 and 100"
+            }else if(score >= 97){
+                grade = "A+"
+            }else if(score >= 93){
+                grade = "A"
+            }else if(score >= 90){
+                grade = "A-"
+            }else if(score >= 87){
+                grade = "B+"
+            }else if(score >= 83){
+                grade = "B"
+            }else if(score >= 80){
+                grade = "B-"
+            }else if(score >= 77){
+                grade = "C+"
+            }else if(score >= 73){
+                grade = "C"
+            }else if(score >= 70){
+                grade = "C-"
+            }else if(score >= 67){
+                grade = "D+"
+            }else if(score >= 63){
+                grade = "D"
+            }else if(score >= 60){
+                grade = "D-"
+            }else{
+                grade = "F"
+            }
+            document.getElementById('grade').innerHTML = `Grade: ${grade}`;
+        }
+    </script>
+</body>
+</html>
